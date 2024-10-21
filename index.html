@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <!-- task1 -->
+    <script>
+       function  user(name,callback){
+          callback(name)
+        }
+       function greet(name){
+          console.log(` ${name},Hello`);
+        }
+        user("usha",greet)
+    </script>
+   
+     <!-- task2 -->
+   <script>
+        var arr = [1,2,3,4,5];
+var result=arr.map(element => {
+return element * element ;
+});
+console.log(result);
+    </script>
+
+      <!-- task3 -->
+    <script>
+function Message(message) {
+  console.log(message);
+}
+function delayed(message, callback) {
+  setTimeout(() => {
+    callback(message);
+  }, 9000);
+}
+delayed("Hi", Message);
+    </script>
+
+      <!-- task4 -->
+    <button id="Button">Click Me</button>
+    <script>
+        var button = document.getElementById("Button");
+function Message() {
+console.log("Hi this is usha");
+}
+function click(button, callback) {
+  button.addEventListener("click", callback);
+}
+click(button, Message);
+    </script>
+
+      <!-- task5 -->
+    <script>
+        function Numbers(numbers, callback) {
+  return numbers.filter(callback);
+}
+function Even(num) {
+  return num % 2 === 0;
+}
+var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+var evenNum = Numbers(numbers, Even);
+console.log(evenNum);
+    </script>
+
+
+      <!-- task6 -->
+<script>
+
+setTimeout(()=>console.log("Time’s up"),7000);
+
+</script>
+
+      <!-- task7 -->
+<script>
+
+var arr = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
+function transform(arr,callback){
+  callback(arr);
+}
+function convert(arr){
+    let res=arr.reverse()
+    console.log(res)
+}
+transform(arr,convert) 
+</script>
+
+      <!-- task8 -->
+<script>
+function check(callback1,callback2){
+if(10%2==0){
+callback1();
+ }
+else{
+  callback2();
+}
+}
+function success(){
+  console.log("success")
+}
+function fail(){
+  console.log("fail")
+}
+check(success,fail);
+</script>
+
+      <!-- task9 -->
+
+<script>
+  function transform(str,callback){
+   return callback(str);
+  }
+  function convert(str){
+      return str.toUpperCase()
+  }
+   var str= "usha"
+  console.log(transform(str,convert))
+  </script>
+
+        <!-- task10 -->
+   <script>
+     function print(n,m,callback){
+        callback(n,m);
+      }
+      function add(x,y){
+       console.log(x+y)
+      }
+      print(5,5,add)
+        </script>
+
+        <!-- task11 -->
+<script>
+function logAction(action, callback) {
+    callback(action);
+}
+
+const log = (action) => console.log(`${action} logged`);
+logAction("Button clicked", log);
+</script>
+        <!-- task12 -->
+         <script>
+         function checkTaskCompletion(task, callback) {
+          const isCompleted = task.isCompleted;
+          callback(isCompleted);
+      }
+      
+      const task = { name: "Submit form", isCompleted: true };
+      const completionMessage = (completed) => {
+          if (completed) {
+              console.log("Task completed successfully!");
+          } else {
+              console.log("Task not completed yet.");
+          }
+      };
+      checkTaskCompletion(task, completionMessage);
+      </script>
+        <!-- task13 -->
+        <script>
+          function runAnimation(callback) {
+              console.log("Animation started...");
+              setTimeout(() => {
+                  console.log("Animation finished!");
+                  callback();
+              }, 2000);
+          }
+  
+          const animationComplete = () => console.log("Now you can proceed!");
+          runAnimation(animationComplete);
+      </script>
+      <!-- task14 -->
+            <script>
+          function operateOnNumber(number, callback) {
+    if (callback(number)) {
+        console.log(`Operation performed on: ${number}`);
+    } else {
+        console.log(`Operation not performed on: ${number}`);
+    }
+}
+const isPositive = (num) => num > 0;
+operateOnNumber(5, isPositive);  
+operateOnNumber(-3, isPositive); 
+</script>
+        <!-- task15 -->
+ <script>
+     var response=[
+  { id: 3, name: 'Peter', age: 47 },
+  { id: 1, name: 'John', age: 41 },
+  { id: 2, name: 'Zack', age: 35 }
+];
+response.sort((a, b) => b.age - a.age)
+console.log(response);
+ </script>
+ <!-- task16 -->
+ <script>
+  function multiStepProcess(steps, callback) {
+    steps.forEach((step, index) => {
+        console.log(`Step ${index + 1}: ${step}`);
+        callback(step);
+    });
+}
+
+const steps = ["Initialize", "Process data", "Finalize"];
+const afterStep = (step) => console.log(`${step} completed!`);
+
+multiStepProcess(steps, afterStep);
+</script>
+
+<!-- task17 -->
+<script>
+  function customLogger(level, message) {
+    const logLevels = {
+        info: "INFO",
+        error: "ERROR",
+        warning: "WARNING"
+    };
+    
+    if (logLevels[level]) {
+        console.log(`[${logLevels[level]}] ${message}`);
+    } else {
+        console.log("[UNKNOWN] " + message);
+    }
+}
+
+customLogger("info", "This is an informational message.");
+customLogger("error", "An error has occurred!");
+customLogger("warning", "This is a warning message.");
+</script>
+
+</body>
+</html>
